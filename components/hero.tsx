@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import { SparklesCore } from "@/components/ui/sparkles"
-import { RainbowButton } from "@/components/ui/rainbow-button"
+import { Button } from "@/components/ui/button"
 
 export default function Hero() {
   const [text1, setText1] = useState("")
@@ -54,6 +54,17 @@ export default function Hero() {
       },
     },
   }
+
+  const codeSnippet = `function generateLeads() {
+  const ai = new ClickMorph.AI();
+  const leads = await ai.analyze(
+    market, 
+    targetAudience
+  );
+  return leads.filter(
+    lead => lead.score > 0.8
+  );
+}`
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id)
@@ -109,7 +120,26 @@ export default function Hero() {
         <p className="text-lg md:text-xl mb-8 md:mb-12 text-gray-300">
           ...However, there are already 101 things on your to-do list. And they are all important!
         </p>
-        <RainbowButton onClick={() => scrollToSection("cta")}>YES, I WANT THAT!</RainbowButton>
+
+        <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-12">
+          <Button variant="gradient" size="xl" onClick={() => scrollToSection("cta")} className="relative z-10">
+            <span className="relative z-10 px-2">YES, I WANT THAT!</span>
+          </Button>
+
+          <div className="code-block text-left text-xs md:text-sm max-w-xs md:max-w-md overflow-hidden">
+            <pre className="text-gray-300">
+              <code>{codeSnippet}</code>
+            </pre>
+          </div>
+        </div>
+
+        <div className="mt-16 flex flex-wrap justify-center gap-4 text-xs text-gray-500">
+          <span className="px-2 py-1 bg-black/50 rounded-full border border-gray-800">AI-Powered</span>
+          <span className="px-2 py-1 bg-black/50 rounded-full border border-gray-800">Data-Driven</span>
+          <span className="px-2 py-1 bg-black/50 rounded-full border border-gray-800">Automation</span>
+          <span className="px-2 py-1 bg-black/50 rounded-full border border-gray-800">Lead Generation</span>
+          <span className="px-2 py-1 bg-black/50 rounded-full border border-gray-800">Conversion Optimization</span>
+        </div>
       </div>
     </section>
   )

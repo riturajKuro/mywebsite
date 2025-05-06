@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { X } from "lucide-react"
 import Link from "next/link"
-import { RainbowButton } from "@/components/ui/rainbow-button"
+import { Button } from "@/components/ui/button"
 
 export default function CookieConsent() {
   const [showConsent, setShowConsent] = useState(false)
@@ -51,7 +51,9 @@ export default function CookieConsent() {
               </p>
             </div>
             <div className="flex items-center gap-3">
-              <RainbowButton onClick={handleAccept}>Accept All</RainbowButton>
+              <Button variant="gradient" size="default" onClick={handleAccept} className="relative z-10">
+                <span className="relative z-10 px-2">Accept All</span>
+              </Button>
               <button
                 onClick={handleClose}
                 className="p-2 text-gray-400 hover:text-white transition-colors"

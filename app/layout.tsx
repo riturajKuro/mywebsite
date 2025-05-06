@@ -22,7 +22,11 @@ export const metadata: Metadata = {
     telephone: false,
   },
   icons: {
-    icon: "/images/clickmorph-logo.png",
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/icon.png', type: 'image/png' },
+    ],
+    shortcut: '/favicon.ico',
   },
   openGraph: {
     type: "website",

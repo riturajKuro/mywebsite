@@ -81,7 +81,7 @@ export default function Footer() {
                 <strong className="text-white">Phone:</strong> +91 9163283613
               </li>
               <li className="text-gray-400">
-                <strong className="text-white">Email:</strong> rituraj.kuro@gmail.com
+                <strong className="text-white">Email:</strong> stealth@clickmorph.org
               </li>
               <li className="text-gray-400">
                 <strong className="text-white">Hours:</strong> 24x7
